@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Main Page</h1>
+
+    <!-- Register Button -->
+    <button id="registerButton" onclick="showRegistrationForm()">Register</button>
+
+    <!-- Registration Form -->
+    <div id="registrationForm" style="display: none;">
+        <h2>Registration</h2>
+        <form onsubmit="return registerUser()">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function showRegistrationForm() {
+            const registerButton = document.getElementById("registerButton");
+            const registrationForm = document.getElementById("registrationForm");
+            const nameInput = document.getElementById("name");
+
+            // Hide the "Register" button and show the registration form
+            registerButton.style.display = "none";
+            registrationForm.style.display = "block";
+            nameInput.focus(); // Automatically focus on the name input field
+        }
+
+        function registerUser() {
+            const nameInput = document.getElementById("name");
+            const userName = nameInput.value;
+            const registerButton = document.getElementById("registerButton");
+
+            // Update the button's content to the registered user's name
+            registerButton.textContent = userName;
+            registerButton.style.display = "block";
+
+            // Prevent the form from submitting (to keep the user on this page)
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: white;
+            color: green;
+            border: solid green 1px;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: green;
+color:white;
+        }
+
+        /* Hidden class for hiding fields */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration</h2>
+    <form id="registrationForm">
+        <label for="userType">Select User Type:</label>
+        <select id="userType" onchange="toggleForm()">
+            <option value="client">Client</option>
+            <option value="investor">Investor</option>
+        </select>
+
+        <!-- Common Fields for Both -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Create Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <!-- Fields for Clients -->
+        <div id="clientFields" class="hidden">
+            <label for="otp">Phone OTP:</label>
+            <input type="text" id="otp" name="otp" required>
+        </div>
+
+        <!-- Fields for Investors -->
+        <div id="investorFields" class="hidden">
+            <label for="company">Company/Business:</label>
+            <input type="text" id="company" name="company">
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        function toggleForm() {
+            const userType = document.getElementById("userType").value;
+            const clientFields = document.getElementById("clientFields");
+            const investorFields = document.getElementById("investorFields");
+
+            if (userType === "client") {
+                clientFields.classList.remove("hidden");
+                investorFields.classList.add("hidden");
+            } else if (userType === "investor") {
+                clientFields.classList.add("hidden");
+                investorFields.classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Divs</title>
+    <style>
+        /* Add your CSS styles here */
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            max-width: 100%;
+        }
+
+        .card {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 250px;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .apply-button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .apply-button:hover {
+            background-color: #2980b9;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card" style="background-image: url('tcs.png'); height:250px;width:100%;"></div>
+        <button class="apply-button" onclick="openURL('https://tcs.com')">Apply</button>
+    </div>
+
+    <div class="card-container">
+        <div class="card" style="background-image: url('ibm.png');"></div>
+        <button class="apply-button" onclick="openURL('https://ibm.com')">Apply</button>
+    </div>
+
+    <div class="card-container">
+        <div class="card" style="background-image: url('google.jpg');"></div>
+        <button class="apply-button" onclick="openURL('https://www.google.com/search?q=google+for+education+jobs&sca_esv=567858163&sxsrf=AM9HkKmD14AKmD3UeeZNk6KNSogmkv7LgA:1695481669218&ei=Rf8OZb36DJmI4-EP2eWF8Ac&oq=google+for+education&gs_lp=Egxnd3Mtd2l6LXNlcnAiFGdvb2dsZSBmb3IgZWR1Y2F0aW9uKgIIAjILEAAYigUYsQMYkQIyCBAAGIoFGJECMggQABiKBRiRAjIIEAAYigUYkQIyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARIySlQ5QpYzA9wAXgAkAEAmAHpAaABqAmqAQUwLjMuM7gBAcgBAPgBAcICChAAGEcY1gQYsAPCAgoQABiKBRiwAxhDwgIHECMYsAIYJ8ICBhAAGAcYHsICBxAAGA0YgATiAwQYACBBiAYBkAYK&sclient=gws-wiz-serp&ibp=htl;jobs&sa=X&ved=2ahUKEwiKpoq_gcGBAxWdb2wGHQsHAP8Qkd0GegQIDhAB#fpstate=tldetail&htivrt=jobs&htiq=google+for+education+jobs&htidocid=Xs3rBRNP9NVHhRTJAAAAAA%3D%3D')">Apply</button>
+    </div>
+<script>
+        function openURL(url) {
+            window.open(url, '_blank'); // Opens the URL in a new tab
+        }
+    </script>
+</body>
+</html>
